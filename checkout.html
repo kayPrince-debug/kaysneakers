@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <header class="header header--minimal">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <div class="checkout-progress">
+        <span class="checkout-progress__step active">Cart</span>
+        <span class="checkout-progress__divider">›</span>
+        <span class="checkout-progress__step active">Checkout</span>
+      </div>
+      <span class="checkout-secure">🔒 Secure checkout</span>
+    </div>
+  </header>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="checkout-page">
+    <div class="container">
+      <form class="checkout-form" id="checkoutForm">
+        <div class="checkout-main">
+          <section class="checkout-section">
+            <h2>Contact</h2>
+            <input type="email" class="input" name="email" placeholder="Email" required>
+          </section>
+          <section class="checkout-section">
+            <h2>Shipping</h2>
+            <input type="text" class="input" name="firstName" placeholder="First name" required>
+            <input type="text" class="input" name="lastName" placeholder="Last name" required>
+            <input type="text" class="input" name="address" placeholder="Address" required>
+            <input type="text" class="input" name="city" placeholder="City" required>
+            <div class="checkout-row">
+              <input type="text" class="input" name="state" placeholder="State" required>
+              <input type="text" class="input" name="zip" placeholder="ZIP" required>
+            </div>
+          </section>
+          <section class="checkout-section">
+            <h2>Payment</h2>
+            <div class="checkout-payment">
+              <input type="text" class="input" placeholder="Card number" maxlength="19">
+              <div class="checkout-row">
+                <input type="text" class="input" placeholder="MM / YY">
+                <input type="text" class="input" placeholder="CVC">
+              </div>
+            </div>
+            <div class="checkout-payment-icons">
+              <span>Visa</span> <span>Mastercard</span> <span>Amex</span> <span>PayPal</span>
+            </div>
+          </section>
+          <label class="checkout-create-account">
+            <input type="checkbox" name="createAccount"> Create an account for faster checkout
+          </label>
+        </div>
+        <aside class="checkout-sidebar">
+          <div class="checkout-order" id="checkoutOrder"></div>
+          <button type="submit" class="btn btn-primary checkout-submit">Complete Purchase</button>
+          <a href="cart.html" class="checkout-back">← Return to cart</a>
+        </aside>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

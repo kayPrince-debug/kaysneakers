@@ -1,0 +1,441 @@
+/* KaySneakers Polish & Responsiveness */
+
+/* ========== Accessibility ========== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--jet-black);
+  color: var(--white);
+  font-weight: var(--fw-medium);
+  z-index: 1000;
+  transition: top var(--duration-fast) var(--ease);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Enhanced focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--jet-black);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible {
+  outline-color: var(--white);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========== Global Polish ========== */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--jet-black);
+  color: var(--white);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ========== Safe Areas (notched devices) ========== */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .footer {
+    padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom));
+  }
+  
+  .chat-widget {
+    bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
+    right: calc(var(--space-lg) + env(safe-area-inset-right));
+  }
+  
+  .header__inner {
+    padding-left: max(var(--gutter-mobile), env(safe-area-inset-left));
+    padding-right: max(var(--gutter-mobile), env(safe-area-inset-right));
+  }
+  
+  .product-sticky-cta {
+    padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
+  }
+}
+
+/* ========== Header Responsive ========== */
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: 1.25rem;
+  }
+  
+  .header__actions {
+    gap: var(--space-sm);
+  }
+  
+  .search-trigger,
+  .cart-trigger,
+  .menu-toggle {
+    min-width: var(--touch-target);
+    min-height: var(--touch-target);
+  }
+}
+
+/* ========== Hero Responsive ========== */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 75vh;
+  }
+  
+  .hero__content {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .hero__tag {
+    letter-spacing: 0.1em;
+  }
+  
+  .hero__title {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--text-small);
+  }
+  
+  .hero__cta {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* ========== Section Responsive ========== */
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .section-header--center {
+    align-items: center;
+  }
+  
+  .product-grid {
+    gap: var(--space-md);
+  }
+}
+
+/* ========== Featured Story Responsive ========== */
+@media (max-width: 767px) {
+  .featured-story {
+    min-height: auto;
+  }
+  
+  .featured-story__content {
+    padding: var(--space-2xl) var(--gutter-mobile);
+    order: 2;
+  }
+  
+  .featured-story__media {
+    min-height: 240px;
+    order: 1;
+  }
+  
+  .featured-story__content .btn {
+    width: 100%;
+  }
+}
+
+/* ========== Reviews Responsive ========== */
+@media (max-width: 480px) {
+  .review-card {
+    padding: var(--space-md);
+  }
+  
+  .review-card p {
+    font-size: var(--text-small);
+  }
+}
+
+/* ========== As Seen In Responsive ========== */
+@media (max-width: 480px) {
+  .as-seen-in {
+    gap: var(--space-xl);
+  }
+  
+  .as-seen-in__logo {
+    font-size: 1rem;
+  }
+}
+
+/* ========== Fit Guarantee Banner Responsive ========== */
+@media (max-width: 600px) {
+  .fit-guarantee-banner__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 var(--gutter-mobile);
+  }
+  
+  .fit-guarantee-banner__icon {
+    margin: 0 auto;
+  }
+}
+
+/* ========== Cart Responsive ========== */
+@media (max-width: 640px) {
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+  
+  .cart-item__price {
+    grid-column: 1 / -1;
+    text-align: right;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--off-white);
+    margin-top: 0;
+  }
+  
+  .cart-item__actions {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  .cart-item__quantity button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-page {
+    padding: var(--space-xl) 0;
+  }
+  
+  .cart-page h1 {
+    font-size: var(--text-h2);
+  }
+  
+  .cart-summary {
+    padding: var(--space-lg);
+  }
+  
+  .cart-empty {
+    padding: var(--space-2xl);
+  }
+}
+
+/* ========== Product Page Responsive ========== */
+@media (max-width: 767px) {
+  .product-layout {
+    gap: var(--space-lg);
+  }
+  
+  .product-gallery {
+    position: relative;
+    top: 0;
+  }
+  
+  .product-gallery__thumb {
+    flex: 0 0 64px;
+  }
+  
+  .product-info__actions .btn {
+    width: 100%;
+  }
+  
+  .product-trust__list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info__price {
+    font-size: var(--text-h3);
+  }
+  
+  .size-selector {
+    gap: var(--space-xs);
+  }
+  
+  .size-option {
+    min-width: 44px;
+    height: 44px;
+  }
+  
+  .product-reviews .reviews-carousel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Collection Page Responsive ========== */
+@media (max-width: 480px) {
+  .collection-header h1 {
+    font-size: var(--text-h2);
+  }
+  
+  .collection-sort {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* ========== Checkout Responsive ========== */
+@media (max-width: 480px) {
+  .checkout-section .input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .checkout-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkout-order__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ========== Footer Responsive ========== */
+@media (max-width: 640px) {
+  .footer__newsletter-form {
+    flex-direction: column;
+  }
+  
+  .footer__newsletter-form .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    gap: var(--space-xl);
+  }
+  
+  .footer__brand {
+    max-width: none;
+  }
+  
+  .footer__guarantee {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ========== Modal Responsive ========== */
+@media (max-width: 480px) {
+  .modal {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+  
+  .modal-overlay .modal > div {
+    padding: var(--space-xl) var(--gutter-mobile) !important;
+  }
+}
+
+/* ========== Chat Widget Responsive ========== */
+@media (max-width: 480px) {
+  .chat-widget__trigger span {
+    display: none;
+  }
+  
+  .chat-widget__trigger {
+    padding: var(--space-md);
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+  }
+}
+
+/* ========== Search Overlay Responsive ========== */
+@media (max-width: 480px) {
+  .search-overlay__inner {
+    margin-top: var(--space-2xl);
+  }
+  
+  .search-overlay__input {
+    font-size: 1.25rem;
+    padding: var(--space-lg);
+  }
+}
+
+/* ========== 404 Page ========== */
+.page-404 {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4xl) var(--gutter-mobile);
+}
+
+.page-404__title {
+  font-size: clamp(3rem, 15vw, 6rem);
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.page-404__subtitle {
+  font-size: var(--text-h4);
+  margin-bottom: var(--space-xl);
+}
+
+.page-404__text {
+  margin-bottom: var(--space-2xl);
+}
+
+.page-404__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.page-404__actions .btn {
+  min-width: 140px;
+}
+
+/* ========== Static Pages Responsive ========== */
+@media (max-width: 480px) {
+  .static-page article {
+    padding: 0;
+  }
+  
+  .static-page .lead {
+    font-size: var(--text-body);
+  }
+  
+  .static-table th,
+  .static-table td {
+    padding: var(--space-sm);
+    font-size: var(--text-small);
+  }
+}

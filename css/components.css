@@ -1,0 +1,256 @@
+/* KaySneakers Components */
+
+/* Product Card */
+.product-card {
+  background: var(--soft-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--duration-normal) var(--ease),
+              box-shadow var(--duration-normal) var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-card__image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  background: var(--off-white);
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.05);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  background: var(--jet-black);
+  color: var(--white);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-tiny);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-card__quick-add {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease),
+              transform var(--duration-normal) var(--ease);
+}
+
+.product-card:hover .product-card__quick-add {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.product-card__content {
+  padding: var(--space-lg);
+}
+
+.product-card__title {
+  font-size: var(--text-body);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__price {
+  font-weight: var(--fw-semibold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.product-card__price-old {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+  font-weight: var(--fw-regular);
+}
+
+/* Star Rating */
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--warm-gray);
+}
+
+.stars__filled { color: var(--jet-black); }
+
+/* Review Card */
+.review-card {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* Media Logo (As Seen In) */
+.media-logo {
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter var(--duration-fast) var(--ease);
+  height: 28px;
+  object-fit: contain;
+}
+
+.media-logo:hover {
+  filter: grayscale(0%) opacity(0.8);
+}
+
+/* Trust Badge */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+}
+
+/* Form Inputs */
+.input {
+  width: 100%;
+  padding: var(--space-md);
+  font-family: inherit;
+  font-size: var(--text-body);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  transition: border-color var(--duration-fast) var(--ease);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--jet-black);
+}
+
+.input::placeholder {
+  color: var(--warm-gray);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-normal) var(--ease),
+              visibility var(--duration-normal) var(--ease);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform var(--duration-normal) var(--ease);
+}
+
+.modal-overlay.is-open .modal {
+  transform: scale(1);
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease);
+}
+
+.modal__close:hover {
+  background: var(--off-white);
+}
+
+/* Size Selector */
+.size-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.size-option {
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-medium);
+  transition: all var(--duration-fast) var(--ease);
+}
+
+.size-option:hover {
+  border-color: var(--charcoal);
+}
+
+.size-option.selected {
+  border-color: var(--jet-black);
+  background: var(--jet-black);
+  color: var(--white);
+}
+
+.size-option:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Chat Widget (shared) */
+.chat-widget {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 90;
+}
+
+.chat-widget__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--jet-black);
+  color: var(--white);
+  border-radius: 50px;
+  font-weight: var(--fw-medium);
+  font-size: var(--text-small);
+  box-shadow: var(--shadow-dropdown);
+  transition: transform var(--duration-fast) var(--ease),
+              box-shadow var(--duration-fast) var(--ease);
+}
+
+.chat-widget__trigger:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}

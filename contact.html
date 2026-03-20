@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/static.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <nav class="header__nav">
+        <a href="collections.html?c=sneakers">Sneakers</a>
+        <a href="collections.html?c=boots">Boots</a>
+        <a href="collections.html?c=loafers">Loafers</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-trigger"><span class="cart-trigger__count" id="cartCount"></span>🛒</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="collections.html?c=sneakers">Sneakers</a>
+    <a href="collections.html?c=boots">Boots</a>
+    <a href="collections.html?c=loafers">Loafers</a>
+  </nav>
+
+  <main id="main" class="static-page">
+    <div class="container">
+      <article>
+        <h1>Contact Us</h1>
+        <p class="lead">Need sizing help? Questions about your order? We're here.</p>
+        <p><strong>Email:</strong> support@kaysneakers.com</p>
+        <p><strong>Chat:</strong> Click the "Need sizing help?" button at the bottom of any page for AI-powered sizing support.</p>
+        <p>Response time: within 24 hours (business days).</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="footer__logo">KAYSNEAKERS</div><p class="footer__tagline">Work to Walk.</p></div>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script>document.getElementById('menuToggle')?.addEventListener('click',()=>document.querySelector('.mobile-nav')?.classList.toggle('is-open'));</script>
+</body>
+</html>

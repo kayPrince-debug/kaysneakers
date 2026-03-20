@@ -1,0 +1,26 @@
+/* Collection Page */
+.collection-page {
+  padding: var(--space-2xl) 0 var(--space-4xl);
+}
+
+.collection-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.collection-header h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.collection-filters {
+  margin-top: var(--space-lg);
+}
+
+.collection-sort {
+  max-width: 220px;
+  padding: var(--space-md);
+}
+
+.collection-sort:focus {
+  outline: none;
+  border-color: var(--jet-black);
+}

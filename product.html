@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KaySneakers — Premium hybrid footwear. Shop our collection.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Product — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <nav class="header__nav">
+        <a href="collections.html?c=sneakers" class="nav__link">Sneakers</a>
+        <a href="collections.html?c=boots" class="nav__link">Boots</a>
+        <a href="collections.html?c=loafers" class="nav__link">Loafers</a>
+        <a href="collections.html?c=accessories" class="nav__link">Accessories</a>
+      </nav>
+      <div class="header__actions">
+        <button class="search-trigger" aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="cart.html" class="cart-trigger"><span class="cart-trigger__count" id="cartCount"></span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Menu" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search shoes, collections..." id="searchInput" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="collections.html?c=sneakers">Sneakers</a>
+    <a href="collections.html?c=boots">Boots</a>
+    <a href="collections.html?c=loafers">Loafers</a>
+    <a href="size-guide.html">Size Guide</a>
+    <a href="fit-guarantee.html">Fit Guarantee</a>
+  </nav>
+
+  <main id="main" class="product-page">
+    <div class="container">
+      <div class="product-layout" id="productLayout">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <section class="product-reviews section">
+      <div class="container">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-summary">
+          <span class="reviews-summary__stars">★★★★★</span>
+          <span id="reviewsSummaryText">4.9 based on 342 reviews</span>
+        </div>
+        <div class="reviews-carousel">
+          <div class="review-card">
+            <div class="stars"><span class="stars__filled">★★★★★</span></div>
+            <p>"The arch support is perfect. I wear these 10 hours a day."</p>
+            <span class="review-card__author">— Verified Purchase</span>
+          </div>
+          <div class="review-card">
+            <div class="stars"><span class="stars__filled">★★★★★</span></div>
+            <p>"Worth every penny. Sleek and comfortable."</p>
+            <span class="review-card__author">— Verified Purchase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-overlay" id="sizeGuideModal">
+    <div class="modal" style="max-width: 560px;">
+      <button class="modal__close" aria-label="Close" id="sizeGuideClose">×</button>
+      <div style="padding: var(--space-2xl);">
+        <h3 style="margin-bottom: var(--space-lg);">Size Guide</h3>
+        <div class="size-guide-table-wrap">
+          <table class="size-guide-table">
+            <thead>
+              <tr><th>US</th><th>EU</th><th>UK</th><th>Length (in)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>7</td><td>40</td><td>6</td><td>9.6</td></tr>
+              <tr><td>8</td><td>41</td><td>7</td><td>10.0</td></tr>
+              <tr><td>9</td><td>42</td><td>8</td><td>10.4</td></tr>
+              <tr><td>10</td><td>43</td><td>9</td><td>10.7</td></tr>
+              <tr><td>11</td><td>44</td><td>10</td><td>11.0</td></tr>
+              <tr><td>12</td><td>45</td><td>11</td><td>11.4</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 style="margin: var(--space-lg) 0 var(--space-md);">Width</h4>
+        <p class="small text-secondary">Narrow (B) · Regular (D) · Wide (E)</p>
+        <h4 style="margin: var(--space-lg) 0 var(--space-md);">Arch Height</h4>
+        <p class="small text-secondary">Low · Medium · High — Our dual-density footbed adapts to most arches.</p>
+        <a href="size-guide.html" class="btn btn-secondary" style="margin-top: var(--space-lg);">Full Size Guide</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">KAYSNEAKERS</div>
+        <p class="footer__tagline">Premium hybrid footwear. Work to Walk.</p>
+      </div>
+      <div class="footer__column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="size-guide.html">Size Guide</a></li>
+          <li><a href="fit-guarantee.html">Fit Guarantee</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="chat-widget">
+    <button class="chat-widget__trigger" aria-label="Sizing help">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>Need sizing help?</span>
+    </button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

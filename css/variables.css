@@ -1,0 +1,78 @@
+/* KaySneakers Design Tokens */
+:root {
+  /* Colors */
+  --jet-black: #0A0A0A;
+  --true-black: #000000;
+  --soft-white: #FAFAF9;
+  --off-white: #F5F5F4;
+  --charcoal: #262626;
+  --warm-gray: #737373;
+  --light-gray: #A3A3A3;
+  --white: #FFFFFF;
+
+  /* Semantic */
+  --bg-primary: var(--soft-white);
+  --bg-alt: var(--off-white);
+  --text-primary: var(--jet-black);
+  --text-secondary: var(--charcoal);
+  --text-tertiary: var(--warm-gray);
+  --cta-bg: var(--jet-black);
+  --cta-text: var(--white);
+  --cta-hover: var(--charcoal);
+
+  /* Typography */
+  --font-display: "Satoshi", "DM Sans", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --text-h1: clamp(2rem, 5vw, 3rem);
+  --text-h2: clamp(1.75rem, 4vw, 2.25rem);
+  --text-h3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-h4: clamp(1rem, 1.5vw, 1.125rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-tiny: 0.75rem;
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.2;
+  --lh-body: 1.55;
+  --lh-small: 1.4;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Layout */
+  --max-width: 1280px;
+  --gutter: 24px;
+  --gutter-mobile: 16px;
+  --header-height: 72px;
+
+  /* Components */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --btn-min-height: 48px;
+  --touch-target: 44px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+}

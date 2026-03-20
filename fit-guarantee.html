@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Day Fit Guarantee — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/static.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <nav class="header__nav">
+        <a href="collections.html?c=sneakers">Sneakers</a>
+        <a href="collections.html?c=boots">Boots</a>
+        <a href="collections.html?c=loafers">Loafers</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-trigger"><span class="cart-trigger__count" id="cartCount"></span>🛒</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="collections.html?c=sneakers">Sneakers</a>
+    <a href="collections.html?c=boots">Boots</a>
+    <a href="collections.html?c=loafers">Loafers</a>
+    <a href="size-guide.html">Size Guide</a>
+  </nav>
+
+  <main id="main" class="static-page">
+    <div class="container">
+      <article>
+        <h1>30-Day Fit Guarantee</h1>
+        <p class="lead">Not the perfect fit? Exchange for free within 30 days. No questions asked.</p>
+        <p>We believe the right fit shouldn't be a gamble. Every KaySneakers pair is crafted with dual-density comfort and thoughtful sizing, but feet are unique. If your new shoes don't feel perfect, we'll exchange them—free of charge—within 30 days of delivery.</p>
+        <h2>How it works</h2>
+        <ol>
+          <li>Contact us at support@kaysneakers.com or use our chat</li>
+          <li>Tell us your order number and desired size/width</li>
+          <li>We'll ship your exchange with a prepaid return label</li>
+          <li>Send back the original pair within 14 days of receiving your exchange</li>
+        </ol>
+        <h2>Conditions</h2>
+        <ul>
+          <li>Shoes must be unworn and in original packaging</li>
+          <li>One exchange per order</li>
+          <li>Available for US orders; international may vary</li>
+        </ul>
+        <a href="collections.html?c=sneakers" class="btn btn-primary">Shop the Collection</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="footer__logo">KAYSNEAKERS</div><p class="footer__tagline">Work to Walk.</p></div>
+      <div class="footer__column"><h4>Support</h4><ul><li><a href="size-guide.html">Size Guide</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script>document.getElementById('menuToggle')?.addEventListener('click',()=>document.querySelector('.mobile-nav')?.classList.toggle('is-open'));</script>
+</body>
+</html>

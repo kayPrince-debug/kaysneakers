@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KaySneakers — Premium work-to-walk hybrid footwear. Sleek aesthetics, dual-density comfort, sustainable craftsmanship.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <title>KaySneakers — Work to Walk</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+
+      <nav class="header__nav" aria-label="Main">
+        <a href="collections.html?c=sneakers" class="nav__link" aria-haspopup="true" aria-expanded="false">Sneakers</a>
+        <div class="mega-menu">
+          <div class="mega-menu__grid">
+            <div class="mega-menu__column">
+              <h4>Sneakers</h4>
+              <a href="collections.html?c=sneakers">All Sneakers</a>
+              <a href="collections.html?c=sneakers-classic">Classic</a>
+              <a href="collections.html?c=sneakers-running">Running</a>
+              <a href="collections.html?c=sneakers-lifestyle">Lifestyle</a>
+            </div>
+            <div class="mega-menu__column">
+              <h4>Boots</h4>
+              <a href="collections.html?c=boots">All Boots</a>
+              <a href="collections.html?c=boots-chelsea">Chelsea</a>
+              <a href="collections.html?c=boots-ankle">Ankle</a>
+              <a href="collections.html?c=boots-chukka">Chukka</a>
+            </div>
+            <div class="mega-menu__column">
+              <h4>Loafers</h4>
+              <a href="collections.html?c=loafers">All Loafers</a>
+              <a href="collections.html?c=loafers-classic">Classic</a>
+              <a href="collections.html?c=loafers-slip">Slip-on</a>
+              <a href="collections.html?c=loafers-driving">Driving</a>
+            </div>
+            <div class="mega-menu__column">
+              <h4>Accessories</h4>
+              <a href="collections.html?c=accessories">All</a>
+              <a href="collections.html?c=accessories-insoles">Insoles</a>
+              <a href="collections.html?c=accessories-laces">Laces</a>
+              <a href="collections.html?c=accessories-care">Care Kits</a>
+            </div>
+          </div>
+        </div>
+        <a href="collections.html?c=boots" class="nav__link">Boots</a>
+        <a href="collections.html?c=loafers" class="nav__link">Loafers</a>
+        <a href="collections.html?c=accessories" class="nav__link">Accessories</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="search-trigger" aria-label="Search" id="searchTrigger">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="cart.html" class="cart-trigger" aria-label="Cart">
+          <span class="cart-trigger__count" data-count="0" id="cartCount"></span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Menu" id="menuToggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="collections.html?c=sneakers" class="mobile-nav__link">Sneakers</a>
+    <a href="collections.html?c=boots" class="mobile-nav__link">Boots</a>
+    <a href="collections.html?c=loafers" class="mobile-nav__link">Loafers</a>
+    <a href="collections.html?c=accessories" class="mobile-nav__link">Accessories</a>
+    <a href="size-guide.html" class="mobile-nav__link">Size Guide</a>
+    <a href="fit-guarantee.html" class="mobile-nav__link">Fit Guarantee</a>
+  </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search shoes, collections..." id="searchInput" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media parallax-wrap">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1920&q=80" alt="KaySneakers premium sneakers" fetchpriority="high" data-parallax="0.2">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content">
+        <span class="hero__tag">Work to Walk</span>
+        <h1 class="hero__title">Where comfort meets craft.</h1>
+        <p class="hero__subtitle">Premium hybrid footwear. Dual-density comfort. Sustainable design.</p>
+        <a href="collections.html?c=sneakers" class="btn btn-primary hero__cta">Shop the Collection</a>
+      </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="section animate-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <h2>Best Sellers</h2>
+          <a href="collections.html?c=bestsellers" class="section-header__link">View All</a>
+        </div>
+        <div class="product-grid stagger-children" id="bestSellers">
+          <!-- Filled by JS or static -->
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section section--alt animate-on-scroll">
+      <div class="container">
+        <div class="section-header">
+          <h2>New Arrivals</h2>
+          <a href="collections.html?c=new-arrivals" class="section-header__link">View All</a>
+        </div>
+        <div class="product-grid stagger-children" id="newArrivals">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Story -->
+    <section class="featured-story">
+      <div class="featured-story__content animate-on-scroll animate-left">
+        <span class="featured-story__label">Sustainability</span>
+        <h2>Engineered for the long run.</h2>
+        <p>Every KaySneakers pair uses recycled materials, water-based adhesives, and ethical sourcing. Built to last, designed to give back.</p>
+        <a href="sustainability.html" class="btn btn-secondary">Our Commitment</a>
+      </div>
+      <div class="featured-story__media parallax-wrap">
+        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200&q=80" alt="Sustainable shoe craftsmanship" data-parallax="0.15">
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section animate-on-scroll">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <h2>Loved by professionals</h2>
+          <p class="text-secondary">4.9 / 5 from 2,400+ reviews</p>
+        </div>
+        <div class="reviews-carousel stagger-children">
+          <div class="review-card animate-on-scroll">
+            <div class="stars">
+              <span class="stars__filled">★★★★★</span>
+            </div>
+            <p>"Finally, shoes that survive a 12-hour day without killing my feet. The arch support is incredible."</p>
+            <span class="review-card__author">— Marcus T., Verified Purchase</span>
+          </div>
+          <div class="review-card animate-on-scroll">
+            <div class="stars">
+              <span class="stars__filled">★★★★★</span>
+            </div>
+            <p>"Switched from my old brand and never looked back. Clean look, perfect for client meetings."</p>
+            <span class="review-card__author">— Sarah K., Verified Purchase</span>
+          </div>
+          <div class="review-card animate-on-scroll">
+            <div class="stars">
+              <span class="stars__filled">★★★★★</span>
+            </div>
+            <p>"Best investment I've made. The width options actually fit my feet—game changer."</p>
+            <span class="review-card__author">— David L., Verified Purchase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- As Seen In -->
+    <section class="section section--compact animate-on-scroll">
+      <div class="container">
+        <p class="as-seen-in__label">As seen in</p>
+        <div class="as-seen-in">
+          <span class="as-seen-in__logo">GQ</span>
+          <span class="as-seen-in__logo">Forbes</span>
+          <span class="as-seen-in__logo">Hypebeast</span>
+          <span class="as-seen-in__logo">Bloomberg</span>
+          <span class="as-seen-in__logo">Esquire</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fit Guarantee -->
+    <section class="fit-guarantee-banner animate-on-scroll">
+      <div class="container">
+        <div class="fit-guarantee-banner__inner">
+          <div class="fit-guarantee-banner__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="fit-guarantee-banner__content">
+            <h3>30-Day Fit Guarantee</h3>
+            <p>Not the perfect fit? Exchange for free within 30 days. No questions asked.</p>
+            <a href="fit-guarantee.html" class="fit-guarantee-banner__link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">KAYSNEAKERS</div>
+        <p class="footer__tagline">Premium hybrid footwear for professionals who move. Work to Walk.</p>
+        <div class="footer__newsletter">
+          <h4>Join the list</h4>
+          <form class="footer__newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Email address" required aria-label="Email">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="size-guide.html">Size Guide</a></li>
+          <li><a href="fit-guarantee.html">Fit Guarantee</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="returns-shipping.html">Returns & Shipping</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <div class="footer__payments">
+          <span class="tiny" style="color:var(--light-gray)">Secure checkout</span>
+          <span class="tiny" style="color:var(--light-gray)">Visa · Mastercard · Amex · PayPal · Apple Pay</span>
+        </div>
+        <div class="footer__legal">
+          <a href="returns-shipping.html">Returns</a>
+          <a href="privacy-policy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="footer__guarantee">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Free shipping on orders over $150 · 30-day Fit Guarantee</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-widget__trigger" aria-label="Sizing help" id="chatTrigger">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>Need sizing help?</span>
+    </button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

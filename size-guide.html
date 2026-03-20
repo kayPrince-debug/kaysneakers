@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size Guide — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/static.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <nav class="header__nav">
+        <a href="collections.html?c=sneakers">Sneakers</a>
+        <a href="collections.html?c=boots">Boots</a>
+        <a href="collections.html?c=loafers">Loafers</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-trigger"><span class="cart-trigger__count" id="cartCount"></span>🛒</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="collections.html?c=sneakers">Sneakers</a>
+    <a href="collections.html?c=boots">Boots</a>
+    <a href="collections.html?c=loafers">Loafers</a>
+    <a href="fit-guarantee.html">Fit Guarantee</a>
+  </nav>
+
+  <main id="main" class="static-page">
+    <div class="container">
+      <article>
+        <h1>Size Guide</h1>
+        <p class="lead">Find your perfect fit with our length, width, and arch recommendations.</p>
+
+        <h2>Length Conversion</h2>
+        <div class="table-wrap">
+          <table class="static-table">
+            <thead>
+              <tr><th>US</th><th>EU</th><th>UK</th><th>Length (in)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>6</td><td>39</td><td>5</td><td>9.25</td></tr>
+              <tr><td>7</td><td>40</td><td>6</td><td>9.6</td></tr>
+              <tr><td>8</td><td>41</td><td>7</td><td>10.0</td></tr>
+              <tr><td>9</td><td>42</td><td>8</td><td>10.4</td></tr>
+              <tr><td>10</td><td>43</td><td>9</td><td>10.7</td></tr>
+              <tr><td>11</td><td>44</td><td>10</td><td>11.0</td></tr>
+              <tr><td>12</td><td>45</td><td>11</td><td>11.4</td></tr>
+              <tr><td>13</td><td>46</td><td>12</td><td>11.8</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Width</h2>
+        <p><strong>Narrow (B)</strong> — For slimmer feet. Our narrow fits run true to standard narrow sizing.</p>
+        <p><strong>Regular (D)</strong> — Our default. Fits most feet comfortably.</p>
+        <p><strong>Wide (E)</strong> — For wider feet. Available on select styles.</p>
+
+        <h2>Arch Height</h2>
+        <p>Our dual-density footbed adapts to low, medium, and high arches. If you have particularly high arches, consider our removable insole for custom orthotics.</p>
+
+        <p><strong>Still unsure?</strong> <a href="#">Chat with our AI sizing assistant</a> or email support@kaysneakers.com.</p>
+        <a href="fit-guarantee.html" class="btn btn-primary">30-Day Fit Guarantee</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="footer__logo">KAYSNEAKERS</div><p class="footer__tagline">Work to Walk.</p></div>
+      <div class="footer__column"><h4>Support</h4><ul><li><a href="fit-guarantee.html">Fit Guarantee</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script>document.getElementById('menuToggle')?.addEventListener('click',()=>document.querySelector('.mobile-nav')?.classList.toggle('is-open'));</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — KaySneakers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/static.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">KAYSNEAKERS</a>
+      <nav class="header__nav">
+        <a href="collections.html?c=sneakers">Sneakers</a>
+        <a href="collections.html?c=boots">Boots</a>
+        <a href="collections.html?c=loafers">Loafers</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-trigger"><span class="cart-trigger__count" id="cartCount"></span>🛒</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="collections.html?c=sneakers">Sneakers</a>
+    <a href="collections.html?c=boots">Boots</a>
+    <a href="collections.html?c=loafers">Loafers</a>
+  </nav>
+
+  <main id="main" class="static-page">
+    <div class="container">
+      <article>
+        <h1>Privacy Policy</h1>
+        <p class="lead">Last updated: March 2025</p>
+        <p>We collect information you provide (email, address, payment) to process orders and improve your experience. We do not sell your data. We use cookies for cart and preferences. Contact support@kaysneakers.com for requests.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="footer__logo">KAYSNEAKERS</div><p class="footer__tagline">Work to Walk.</p></div>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script>document.getElementById('menuToggle')?.addEventListener('click',()=>document.querySelector('.mobile-nav')?.classList.toggle('is-open'));</script>
+</body>
+</html>
