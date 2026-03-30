@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — KaySneakers</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/polish.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-page">
+    <div class="admin-shell">
+      <div class="admin-topbar" style="border-radius: var(--radius-md); border: 1px solid var(--off-white); overflow: hidden; margin-bottom: var(--space-xl);">
+        <div class="admin-topbar__inner">
+          <div class="admin-logo">KAYSNEAKERS Admin</div>
+          <div class="admin-actions">
+            <a href="../index.html" class="btn btn-secondary btn-admin btn-admin-secondary">Back to store</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width: 520px; margin: 0 auto;">
+        <h1 style="font-size: var(--text-h2); margin-bottom: var(--space-lg);">Admin Login</h1>
+        <p class="muted small" id="loginHelp" style="margin-bottom: var(--space-xl);"></p>
+
+        <form id="loginForm" style="display: grid; gap: var(--space-lg);">
+          <div style="display: grid; gap: var(--space-sm);">
+            <label for="password" style="font-weight: var(--fw-medium); font-size: var(--text-small);">Password</label>
+            <input id="password" type="password" class="input-admin" placeholder="Enter admin password" autocomplete="current-password" required>
+          </div>
+
+          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary btn-admin" style="flex: 1; min-width: 220px;">Login</button>
+            <button type="button" id="clearBtn" class="btn-admin-secondary btn-admin btn" style="min-width: 180px;">Reset password</button>
+          </div>
+        </form>
+
+        <p class="small muted" style="margin-top: var(--space-lg);">
+          Demo mode: orders are stored in your browser only (`localStorage`).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    (function () {
+      const loginForm = document.getElementById('loginForm');
+      const passwordEl = document.getElementById('password');
+      const helpEl = document.getElementById('loginHelp');
+      const clearBtn = document.getElementById('clearBtn');
+
+      const storedHash = localStorage.getItem('kays_admin_password_hash');
+      helpEl.textContent = storedHash
+        ? 'Enter your admin password to manage orders.'
+        : 'No password set yet. Your first login will set the admin password.';
+
+      clearBtn.addEventListener('click', () => {
+        if (!confirm('Reset admin password in this browser?')) return;
+        localStorage.removeItem('kays_admin_password_hash');
+        localStorage.removeItem('kays_admin_session');
+        alert('Password reset. Reload the page and login again.');
+        window.location.reload();
+      });
+
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const password = passwordEl.value;
+        if (!password) return;
+
+        const res = await window.AdminAuth.attemptLogin(password);
+        if (!res.ok) {
+          alert('Incorrect password.');
+          return;
+        }
+
+        window.location.replace('index.html');
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -152,11 +152,16 @@
     </section>
 
     <!-- Reviews -->
-    <section class="section animate-on-scroll">
+    <section class="section section--glass animate-on-scroll">
       <div class="container">
         <div class="section-header section-header--center">
           <h2>Loved by professionals</h2>
-          <p class="text-secondary">4.9 / 5 from 2,400+ reviews</p>
+          <p class="text-secondary" aria-label="Rating 4.9 out of 5, from 2,400 plus reviews">
+            <span class="count-up" data-from="0" data-to="4.9" data-decimals="1" data-duration="900">0.0</span>
+            <span class="small" aria-hidden="true"> / 5 from </span>
+            <span class="count-up" data-from="0" data-to="2400" data-decimals="0" data-duration="1100" data-suffix="+">0</span>
+            <span class="small" aria-hidden="true"> reviews</span>
+          </p>
         </div>
         <div class="reviews-carousel stagger-children">
           <div class="review-card animate-on-scroll">
@@ -185,7 +190,7 @@
     </section>
 
     <!-- As Seen In -->
-    <section class="section section--compact animate-on-scroll">
+    <section class="section section--compact section--glass animate-on-scroll">
       <div class="container">
         <p class="as-seen-in__label">As seen in</p>
         <div class="as-seen-in">
@@ -225,7 +230,12 @@
           <h4>Join the list</h4>
           <form class="footer__newsletter-form" id="newsletterForm">
             <input type="email" placeholder="Email address" required aria-label="Email">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <button type="submit" class="btn btn-primary btn--icon-only" aria-label="Subscribe">
+              <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 6-10 7L2 6"/>
+              </svg>
+            </button>
           </form>
         </div>
       </div>
@@ -251,22 +261,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="sustainability.html">Sustainability</a></li>
         </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="footer__bottom-inner">
-        <div class="footer__payments">
-          <span class="tiny" style="color:var(--light-gray)">Secure checkout</span>
-          <span class="tiny" style="color:var(--light-gray)">Visa · Mastercard · Amex · PayPal · Apple Pay</span>
-        </div>
-        <div class="footer__legal">
-          <a href="returns-shipping.html">Returns</a>
-          <a href="privacy-policy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="footer__guarantee">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Free shipping on orders over $150 · 30-day Fit Guarantee</span>
       </div>
     </div>
   </footer>

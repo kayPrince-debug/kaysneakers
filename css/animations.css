@@ -243,6 +243,10 @@
   transform: scale(1.05);
 }
 
+.section--glass .as-seen-in__logo:hover {
+  color: var(--white);
+}
+
 /* Hero content entrance */
 .hero__tag {
   animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
@@ -268,4 +272,21 @@
 
 .footer__column a:hover {
   transform: translateX(2px);
+}
+
+/* Count-up numbers "come alive" */
+@keyframes countPop {
+  0% { transform: scale(0.98); filter: blur(0.6px); }
+  50% { transform: scale(1.04); filter: blur(0px); }
+  100% { transform: scale(1); filter: blur(0px); }
+}
+
+.count-up {
+  display: inline-block;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.count-up.is-animating {
+  animation: countPop 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }

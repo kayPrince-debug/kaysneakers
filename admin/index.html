@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — KaySneakers</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/polish.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-topbar">
+    <div class="admin-topbar__inner">
+      <div class="admin-logo">KAYSNEAKERS Admin</div>
+      <div class="admin-actions">
+        <a href="orders.html" class="btn btn-primary btn-admin">Orders</a>
+        <button type="button" id="logoutBtn" class="btn-admin-secondary btn-admin">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="admin-page">
+    <div class="admin-shell">
+      <h1 style="font-size: var(--text-h2); margin-bottom: var(--space-lg);">Admin Dashboard</h1>
+      <div class="admin-grid" id="stats"></div>
+
+      <div style="margin-top: var(--space-2xl);">
+        <div class="admin-controls" style="margin: 0 0 var(--space-lg);">
+          <div>
+            <h2 style="font-size: var(--text-h4); margin-bottom: var(--space-sm);">Recent orders</h2>
+            <p class="muted small">Update statuses in the Orders page.</p>
+          </div>
+          <a href="orders.html" class="btn btn-secondary btn-admin btn-admin-secondary">Manage Orders</a>
+        </div>
+        <div id="recentList"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    (function () {
+      if (!window.AdminAuth.requireAuth()) return;
+
+      const logoutBtn = document.getElementById('logoutBtn');
+      logoutBtn?.addEventListener('click', () => window.AdminAuth.logout());
+
+      const orders = window.AdminAuth.getOrders();
+
+      const STATUS = window.AdminAuth.STATUS_OPTIONS;
+      const counts = {};
+      STATUS.forEach(s => counts[s] = 0);
+      orders.forEach(o => { if (counts[o.status] !== undefined) counts[o.status]++; });
+
+      const statsEl = document.getElementById('stats');
+      statsEl.innerHTML = STATUS.map(status => `
+        <div class="stat-card">
+          <h3>${status}</h3>
+          <div class="stat-value">${counts[status] || 0}</div>
+        </div>
+      `).join('');
+
+      const recentList = document.getElementById('recentList');
+      if (!orders.length) {
+        recentList.innerHTML = '<p class="muted">No orders yet. Place a test order on the store, then come back.</p>';
+        return;
+      }
+
+      recentList.innerHTML = orders.slice(0, 5).map(o => `
+        <div style="background: var(--white); border: 1px solid var(--off-white); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-card); margin-bottom: var(--space-lg);">
+          <div style="display:flex; justify-content:space-between; gap: var(--space-md); flex-wrap:wrap;">
+            <div>
+              <strong>${o.id}</strong>
+              <div class="muted small" style="margin-top:4px;">${new Date(o.createdAt).toLocaleString()}</div>
+              <div class="muted small" style="margin-top:6px;">${o.customer?.email || ''}</div>
+            </div>
+            <div style="text-align:right;">
+              <span class="status-chip">${o.status}</span>
+              <div style="margin-top:10px; font-weight: var(--fw-bold);">$${Number(o.totals?.total || 0).toFixed(2)}</div>
+            </div>
+          </div>
+          <div style="margin-top: var(--space-md);">
+            <a class="details-link" href="orders.html?orderId=${encodeURIComponent(o.id)}">View in Orders</a>
+          </div>
+        </div>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>
+

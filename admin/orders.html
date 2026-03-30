@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Orders — KaySneakers</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/polish.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-topbar">
+    <div class="admin-topbar__inner">
+      <div class="admin-logo">KAYSNEAKERS Admin</div>
+      <div class="admin-actions">
+        <a href="index.html" class="btn btn-secondary btn-admin-secondary btn-admin-secondary">Dashboard</a>
+        <button type="button" id="logoutBtn" class="btn-admin-secondary btn-admin">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="admin-page">
+    <div class="admin-shell">
+      <div style="display:flex;justify-content:space-between;gap:var(--space-lg);flex-wrap:wrap;align-items:flex-end;">
+        <div>
+          <h1 style="font-size: var(--text-h2); margin-bottom: var(--space-sm);">Orders</h1>
+          <p class="muted small">Demo mode: orders are saved when you check out in the store.</p>
+        </div>
+        <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;">
+          <input id="searchInput" class="input-admin" placeholder="Search by order id or email" />
+          <button type="button" id="sampleBtn" class="btn btn-secondary btn-admin-secondary">Generate sample</button>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-xl);">
+        <div class="table-wrap">
+          <table class="admin-table admin-table--orders">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th style="text-align:right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersBody"></tbody>
+          </table>
+        </div>
+
+        <div class="mobile-orders" id="ordersMobile"></div>
+
+        <div id="emptyState" style="margin-top: var(--space-2xl); display:none;">
+          <p class="muted">No orders yet.</p>
+          <button type="button" class="btn btn-primary btn-admin" id="createSampleBtn">Generate sample order</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="detailsModal" style="display:none;">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+      <div class="modal__header">
+        <div>
+          <div class="modal__title" id="detailsTitle">Order details</div>
+          <div class="muted small" id="detailsSubtitle"></div>
+        </div>
+        <button type="button" class="modal__close" id="detailsClose">×</button>
+      </div>
+
+      <div style="margin-top: var(--space-lg);">
+        <h2 style="font-size: var(--text-h4); margin-bottom: var(--space-md);">Items</h2>
+        <div class="items-list" id="detailsItems"></div>
+      </div>
+
+      <div style="margin-top: var(--space-xl); display:grid; gap: var(--space-sm);">
+        <div class="muted small">Shipping</div>
+        <div id="detailsShipping"></div>
+        <div class="muted small" style="margin-top: var(--space-md);">Payment</div>
+        <div id="detailsPayment"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>
+
